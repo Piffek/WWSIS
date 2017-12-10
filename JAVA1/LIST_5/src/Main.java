@@ -25,19 +25,20 @@ public class Main {
 
 
     public static void main(String[] args) {
-        String stringIn = "SUB 1 1 1"; // TODO: from user
 
         Scanner action = new Scanner(System.in);
         String whatAction = action.nextLine();
 
         String[] items = whatAction.split("\\s+");
-        if (items.length > 0) {
-            try {
-                doOperation(items[0], getElements(items));
-            } catch (NumberFormatException e) {
-                System.out.println(e.getMessage());
-            }
-        }
+
+        System.out.println(items);
+//        if (items.length > 0) {
+//            try {
+//                doOperation(items[0], getElements(items));
+//            } catch (NumberFormatException e) {
+//                System.out.println(e.getMessage());
+//            }
+//        }
     }
 
     private static void doOperation(String operation, Integer... elements) {
