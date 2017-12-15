@@ -1,50 +1,39 @@
-package com.company;
-
-import java.util.ArrayList;
-import java.util.List;
-
 class ListStack implements Stack {
-    List<StackElement> listStack;
-    int counter;
-
-    public ListStack() {
-        listStack = new ArrayList<>();
-    }
+    private StackElement stackElement;
+    private int size;
 
     @Override
     public void push(int value) {
-        if (listStack.size() > 0) {
-            listStack.add(0, new StackElement(value, listStack.get(0)));
-        } else {
-            listStack.add(0, new StackElement(value, null));
-        }
+        stackElement = new StackElement(value, stackElement);
+        size++;
     }
 
     @Override
     public int pop() {
-        if (!this.isEmpty()) {
-            this.listStack.remove(0).getValue();
-            System.out.println(" ");
+        if (!isEmpty()) {
+            size--;
+            stackElement = stackElement.getNext();
         }
         return 0;
     }
 
     @Override
     public int size() {
-        return this.listStack.size();
+
+        return size;
     }
 
     @Override
     public boolean isEmpty() {
-        return this.listStack.size() == 0;
+        return stackElement == null;
     }
 
     @Override
     public void print() {
-        for (StackElement item : listStack) {
-            System.out.println(item);
+        StackElement currentStackElement = stackElement;
+        while (currentStackElement != null) {
+            System.out.println(currentStackElement.getValue());
+            currentStackElement = currentStackElement.getNext();
         }
-
     }
-
 }

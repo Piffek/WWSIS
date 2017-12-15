@@ -1,5 +1,3 @@
-package com.company;
-
 class StackElement {
 
     private int value;
@@ -17,5 +15,13 @@ class StackElement {
 
     public int getValue() {
         return value;
+    }
+
+    public StackElement getNext() {
+        return next;
+    }
+
+    public void setNext(StackElement next) {
+        this.next = next;
     }
 }

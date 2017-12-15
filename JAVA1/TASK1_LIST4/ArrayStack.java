@@ -1,5 +1,3 @@
-package com.company;
-
 import java.util.Arrays;
 
 public class ArrayStack implements Stack {
@@ -49,5 +47,4 @@ public class ArrayStack implements Stack {
             System.out.println(this.tab[i]);
         }
     }
-
 }
