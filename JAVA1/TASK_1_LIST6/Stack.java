@@ -1,7 +1,7 @@
 package com.company;
 
 public interface Stack{
-    void push(Person value);
+    void push(Object value);
     int pop();
     int size();
     boolean isEmpty();

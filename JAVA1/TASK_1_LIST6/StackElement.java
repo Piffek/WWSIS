@@ -2,10 +2,10 @@ package com.company;
 
 class StackElement {
 
-    private Person value;
+    private Object value;
     private StackElement next;
 
-    public StackElement(Person value, StackElement next) {
+    public StackElement(Object value, StackElement next) {
         this.value = value;
         this.next = next;
     }

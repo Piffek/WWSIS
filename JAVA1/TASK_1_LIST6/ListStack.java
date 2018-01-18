@@ -5,7 +5,7 @@ class ListStack implements Stack {
     private int size;
 
     @Override
-    public void push(Person value) {
+    public void push(Object value) {
         stackElement = new StackElement(value, stackElement);
         size++;
     }
