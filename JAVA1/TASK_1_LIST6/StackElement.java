@@ -15,7 +15,7 @@ class StackElement {
         return value + " ";
     }
 
-    public Person getValue() {
+    public Object getValue() {
         return value;
     }
 
