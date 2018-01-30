@@ -1,5 +1,6 @@
 package com.company;
 
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -21,9 +22,9 @@ public class Main {
 
         //Rozdawanie kart
         for (int i=0; i<5; i++){
-            player1.add(talia.rozdaj());
-            player2.add(talia.rozdaj());
-            player3.add(talia.rozdaj());
+            player1.add(talia.dist());
+            player2.add(talia.dist());
+            player3.add(talia.dist());
         }
 
 
@@ -39,7 +40,7 @@ public class Main {
 
     private static Talia<Integer> setup(){
         Talia<Integer> items = new Talia<>();
-        for (int i = 1; i<= 30; i++){
+        for (int i = 1; i<= 55; i++){
             items.add(i);
         }
         return items;

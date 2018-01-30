@@ -25,7 +25,7 @@ public class Talia<T> extends AbstractCollection<T> {
         if (size() <= 52 && !array.contains(t)) {
             return array.add(t);
         }else {
-            throw new IndexOutOfBoundsException(); //TODO custom exception
+            throw new BiggerException(array.size());
         }
     }
 
@@ -45,7 +45,7 @@ public class Talia<T> extends AbstractCollection<T> {
                 return 0;
             }
         });
-       return internalArray;
+        return internalArray;
     }
 
     //tasowanie
@@ -54,14 +54,14 @@ public class Talia<T> extends AbstractCollection<T> {
         Collections.shuffle(array);
     }
 
-    public T rozdaj(){ //TODO pretty english function name
+    public T dist(){
         if (size() >= 0){
             T internalItem = array.get(0);
             array.remove(0);
             return internalItem;
         }else {
             //gdy się kończą karty do rozdawania
-            throw new IndexOutOfBoundsException(); //TODO custom exception
+            throw new EndCardException(size());
         }
     }
 }
