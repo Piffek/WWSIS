@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1507845218 source:/Users/patrykpiwko/Desktop/wypadek/main.cpp
+	<iostream>
+	<algorithm>
+	<vector>
+
