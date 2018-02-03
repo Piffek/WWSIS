@@ -22,9 +22,15 @@ public class Main {
 
         //Rozdawanie kart
         for (int i=0; i<5; i++){
-            player1.add(talia.dist());
-            player2.add(talia.dist());
-            player3.add(talia.dist());
+            try{
+                player1.add(talia.dist());
+                player2.add(talia.dist());
+                player3.add(talia.dist());
+            }catch(EndCardException e){
+                System.out.print(e);
+            }catch(BiggerException e){
+                System.out.print(e);
+            }
         }
 
 

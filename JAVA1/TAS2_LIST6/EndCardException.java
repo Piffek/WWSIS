@@ -1,8 +1,10 @@
 package com.company;
 
+
 public class EndCardException extends RuntimeException {
 
-    EndCardException(int operation) {
-        super("no more card");
+    @Override
+    public String toString() {
+        return "no more card";
     }
 }

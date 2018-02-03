@@ -21,36 +21,31 @@ public class Talia<T> extends AbstractCollection<T> {
     }
 
     @Override
-    public boolean add(T t) {
+    public boolean add(T t){
         if (size() <= 52 && !array.contains(t)) {
             return array.add(t);
-        }else {
-            throw new BiggerException(array.size());
         }
+            throw new BiggerException();
+
     }
 
     public void print(){
         for (T item : array)  System.out.print(item + " ");
     }
 
-    //działa tylko dla int -> zwraca posortowaną liste
     public List<T> getOrdered(){
-        List<T> internalArray = array;
-        Collections.sort(internalArray, new Comparator<T>() {
-            @Override
-            public int compare(T o1, T o2) {
-                if (o1 instanceof Integer && o2 instanceof Integer) { //works only for integer :(
-                    return ((Integer) o1).compareTo((Integer) o2);
-                }
-                return 0;
+
+        //reference to compare
+        Collections.sort(array, (o1, o2) -> {
+            if (o1 instanceof Integer && o2 instanceof Integer) {
+                return ((Integer) o1).compareTo((Integer) o2);
             }
+            return 0;
         });
-        return internalArray;
+        return array;
     }
 
-    //tasowanie
     public void shuffle(){
-        //metoda statyczna z klasy collections -> collections
         Collections.shuffle(array);
     }
 
@@ -60,8 +55,7 @@ public class Talia<T> extends AbstractCollection<T> {
             array.remove(0);
             return internalItem;
         }else {
-            //gdy się kończą karty do rozdawania
-            throw new EndCardException(size());
+            throw new EndCardException();
         }
     }
 }
